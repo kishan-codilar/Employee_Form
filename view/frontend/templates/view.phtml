@@ -1,0 +1,46 @@
+<?php
+/**
+ * @var \Codilar\Employee\Block\View $block
+ */
+$employee = $block->getAllEmployee();
+?>
+<h2>Details of the Employee</h2>
+<form  method="POST" action="<?php echo $block->getIndexUrl() ?>" >
+    <button style="background-color: #e3dada;">Add New Employee</button>
+</form>
+<div class="brand-listing">
+    
+    <?php if (count($employee) > 0): ?>
+        <table>
+            <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th><?php echo __('FirstName') ?></th>
+                <th>Action</th>
+            </tr>
+            <?php foreach ($block->getAllEmployee() as $employee): ?>
+                <tr>
+                    <td><?php echo $employee->getEntityid() ?></td>
+                    <td><?php echo $employee->getFirstname() ?></td>
+                    <td>
+                        <span>
+                            <button><a href="<?php echo $block->getEditUrl() .'entity_id/'. $employee->getEntityId()?>">Edit</a></button>
+                        </span>
+                        <span>
+                            <button><a href="<?php echo $block->getDeleteUrl() .'entity_id/'. $employee->getEntityId()?>">Delete</a></button>
+                        </span>
+                        <span>
+                            <button><a href="<?php echo $block->getDetailUrl() .'entity_id/'. $employee->getEntityId()?>">View</a></button>
+                        </span>
+            </td>
+
+                    
+                </tr>
+            <?php endforeach; ?>
+            </thead>
+        </table>
+    <?php else: ?>
+        <h3>No Employee Details are available</h3>
+    <?php endif; ?>
+
+</div>

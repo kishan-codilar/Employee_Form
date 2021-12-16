@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var \Codilar\Employee\Block\View $block
+ */
+$employee = $block->getEmployeeDetail();
+?>
+<h2>Details of the Employee</h2>
+
+<button><a href = "<?php echo $block->getUrl('employee/employee/view')?> ">Back</a></button>
+<div class="brand-listing">
+        <table>
+            <thead>
+            <tr>
+                <th><?php echo __('FirstName') ?></th>
+                <th><?php echo __('LastName') ?></th>
+                <th><?php echo __('Mobile Number') ?></th>
+                <th><?php echo __('Email') ?></th>
+                <th>Address</th>
+            </tr>
+           
+                <tr>
+                    <td><?php echo $employee->getFirstname() ?></td>
+                    <td><?php echo $employee->getLastname() ?></td>
+                    <td><?php echo $employee->getNumber() ?></td> 
+                    <td><?php echo $employee->getEmail() ?></td>
+                    <td><?php echo $employee->getAddress() ?></td>
+
+                    
+                </tr>
+          
+            </thead>
+        </table>
+
+
+</div>

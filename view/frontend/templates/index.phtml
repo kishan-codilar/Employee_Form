@@ -1,0 +1,36 @@
+<?php
+
+$block->getIndexUrl();
+?>
+<form  method="POST" action="<?php echo $block->getAddUrl() ?>" >
+<h3>Add new Employee Details</h3>
+        <!-- <div>
+            <label>Is Enabled</label>
+            <select name="is_active">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div> -->
+        <div>
+            <label>First Name</label>
+            <input name="firstname" type="text" />
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input name="lastname" type="text" />
+        </div>
+        <div>
+            <label>Mobile Number</label>
+            <input name="number" type="number" />
+        </div>
+        <div>
+            <label>Email</label>
+            <input name="email" type="email" />
+        </div>
+
+        <div>
+            <label>Address</label>
+            <textarea name="address"></textarea>
+        </div>
+        <button>Add</button>
+</form>

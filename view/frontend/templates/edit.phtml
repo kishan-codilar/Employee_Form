@@ -1,0 +1,33 @@
+<?php
+
+$data=$block->getUpdate();
+?>
+<form  method="POST" action="<?php echo $block->getUpdateUrl() ?>" >
+<h3>Edit Employee Details</h3>
+        <div>
+            <label>ID</label>
+            <input name="entity_id" type="text" value="<?php echo $data['entity_id']?>" readonly/>
+        </div>
+        <div>
+            <label>First Name</label>
+            <input name="firstname" type="text" value="<?php echo $data['firstname']?>"/>
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input name="lastname" type="text" value="<?php echo $data['lastname']?>" />
+        </div>
+        <div>
+            <label>Mobile Number</label>
+            <input name="number" type="number" value="<?php echo $data['number']?>" />
+        </div>
+        <div>
+            <label>Email</label>
+            <input name="email" type="email" value="<?php echo $data['email']?>" />
+        </div>
+
+        <div>
+            <label>Address</label>
+            <textarea name="address"></textarea>
+        </div>
+        <button>save</button>
+</form>
